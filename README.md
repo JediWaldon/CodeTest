@@ -2,7 +2,7 @@
 
 This is an exploration of languages used outside the classroom.
 
-## Programming Languages
+## Languages
 | Name | Encoutered | Familiarity |
 | ---- | ---------- | ----------- |
 | Dart | A friend let me join him on a project he has been running for a bit using Dart. | Very little |
