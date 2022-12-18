@@ -24,7 +24,7 @@ campOverlap returns the number of pairs where they overlap.
 =#
 function campOverlap()
     sum = 0
-    open("/Users/jeddywaldon/CodeTest/Julia/AdventOfCode/day4/input.txt") do io
+    open(pwd() * "/Julia/AdventOfCode/day4/input.txt") do io
         while !eof(io)
             line = readline(io)
             elf1, elf2 = split(line, ',')

@@ -4,7 +4,7 @@ instructions to move them from the rest of the file in the format of "move X fro
 @return the string of crates on the tops of the stacks.
 =#
 function move()
-    open("/Users/jeddywaldon/CodeTest/Julia/AdventOfCode/day5/input.txt") do io
+    open(pwd() * "/Julia/AdventOfCode/day5/input.txt") do io
         crates = makeCrates(io)
         while !eof(io)
             line = readline(io)

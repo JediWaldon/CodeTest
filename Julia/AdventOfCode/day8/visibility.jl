@@ -4,7 +4,7 @@ visible opens the input file and reads the data into a matrix. It then computes 
 =#
 function visible()
     forest = []
-    open("/Users/jeddywaldon/CodeTest/Julia/AdventOfCode/day8/input.txt") do io
+    open(pwd() * "/Julia/AdventOfCode/day8/input.txt") do io
         while !eof(io)
             line = readline(io)
             len = length(line)

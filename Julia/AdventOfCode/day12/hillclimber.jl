@@ -10,7 +10,8 @@ function climb()
     start = [0 0]
     goal = [0 0]
     i = 1
-    open("/Users/jeddywaldon/CodeTest/Julia/AdventOfCode/day12/example.txt") do io
+    display(pwd())
+    open(pwd() * "/Julia/AdventOfCode/day12/example.txt") do io
         while !eof(io)
             line = readline(io)
             mat = Matrix{Char}(undef, 1, sizeof(line))

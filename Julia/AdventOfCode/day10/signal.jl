@@ -13,7 +13,7 @@ function signal()
     i = 1
     cycle = 1
     reg = 1
-    open("/Users/jeddywaldon/CodeTest/Julia/AdventOfCode/day10/input.txt") do io
+    open(pwd() * "/Julia/AdventOfCode/day10/input.txt") do io
         while !eof(io)
             line = readline(io)
             if line[1:4] == "noop"

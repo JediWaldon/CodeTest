@@ -4,7 +4,7 @@ duplicateItems looks for items that share a type (character) in an elf's rucksac
 =#
 function duplicateItems()
     score = 0
-    open("/Users/jeddywaldon/CodeTest/Julia/AdventOfCode/day3/input.txt") do io 
+    open(pwd() * "/Julia/AdventOfCode/day3/input.txt") do io 
         while !eof(io)
             test = zeros(52)
             line = readline(io)

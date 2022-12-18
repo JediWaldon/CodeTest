@@ -9,7 +9,7 @@ function readCL()
     tree = constructSysTree()
     dir = tree.root
     dirList = []
-    open("/Users/jeddywaldon/CodeTest/Julia/AdventOfCode/day7/input.txt") do io
+    open(pwd() * "/Julia/AdventOfCode/day7/input.txt") do io
         while !eof(io)
             dir = command(io, tree, dir)
             if !(dir in dirList)

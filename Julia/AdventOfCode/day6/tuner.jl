@@ -3,7 +3,7 @@ tune looks for the signature of the other elves devices and then returns when it
 @return the index at which it has found the start sequence of a message.
 =#
 function tune()
-    open("/Users/jeddywaldon/CodeTest/Julia/AdventOfCode/day6/input.txt") do io
+    open(pwd() * "/Julia/AdventOfCode/day6/input.txt") do io
         while !eof(io)
             vec = []
             line = readline(io)

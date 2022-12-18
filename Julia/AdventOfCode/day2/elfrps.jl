@@ -62,7 +62,7 @@ function main()
     results = comMatrix()
     response = respMatrix()
     score = 0
-    open("/Users/jeddywaldon/CodeTest/Julia/AdventOfCode/day2/input.txt") do io
+    open(pwd() * "/Julia/AdventOfCode/day2/input.txt") do io
         while !eof(io)
             line = readline(io)
             if length(line) != 3

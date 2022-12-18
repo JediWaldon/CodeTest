@@ -115,7 +115,7 @@ A less useful version of the one in rope10.jl
 function rope()
     A, head, tail = setup()
     list = tail
-    open("/Users/jeddywaldon/CodeTest/Julia/AdventOfCode/day9/input.txt") do io
+    open(pwd() * "/Julia/AdventOfCode/day9/input.txt") do io
         while !eof(io)
             line = readline(io)
             char = line[1]

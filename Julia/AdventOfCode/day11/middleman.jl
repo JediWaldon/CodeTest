@@ -32,7 +32,7 @@ multiplied together.
 =#
 function readFile(rounds)
     monkeylist = Vector{Monkey}()
-    open("/Users/jeddywaldon/CodeTest/Julia/AdventOfCode/day11/input.txt") do io
+    open(pwd() * "/Julia/AdventOfCode/day11/input.txt") do io
         while !eof(io)
             monkeylist = vcat(monkeylist, createMonkey(io))
         end

@@ -23,7 +23,7 @@ function rope()
     rope = Int.(ones(10, 2))
     list = [ 1 1 ]
     sum = 0
-    open("/Users/jeddywaldon/CodeTest/Julia/AdventOfCode/day9/input.txt") do io
+    open(pwd() * "/Julia/AdventOfCode/day9/input.txt") do io
         while !eof(io)
             line = readline(io)
             char = line[1]

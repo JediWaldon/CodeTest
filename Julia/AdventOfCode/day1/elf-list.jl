@@ -32,7 +32,7 @@ function readIntoElfList()
     thirdVal = 0
     i = 1
     newElf = true
-    open("/Users/jeddywaldon/CodeTest/Julia/AdventOfCode/day1/input.txt") do io
+    open(pwd() * "/Julia/AdventOfCode/day1/input.txt") do io
         while !eof(io)
             word = readline(io)
             if length(word) == 0
