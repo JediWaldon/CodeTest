@@ -1,4 +1,4 @@
-# CodeTest
+# Code Test
 
 This is an exploration of languages used outside the classroom.
 
