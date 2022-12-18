@@ -2,12 +2,14 @@
 
 using DataStructures
 
-function readFile()
+#=
+climb reads the file and records the data into a matrix to use as a map.
+=#
+function climb()
     map = []
     start = [0 0]
     goal = [0 0]
     i = 1
-
     open("/Users/jeddywaldon/CodeTest/Julia/AdventOfCode/day12/example.txt") do io
         while !eof(io)
             line = readline(io)
@@ -15,7 +17,7 @@ function readFile()
             for j = 1:sizeof(line)
                 mat[j] = line[j]
                 if line[j] == 'S'
-                    start = [i, j]
+                    start = [i j]
                 elseif line[j] == 'E'
                     goal = [i j]
                 end
@@ -35,6 +37,12 @@ function readFile()
     return pq
 end
 
+#=
+manhattan finds the manhattan distance between two points.
+@param pos is the current position.
+@param goal is the goal position of the climb.
+@return the manhattan distance between the two points.
+=#
 function manhattan(pos, goal)
     return abs(goal[1] - pos[1]) + abs(goal[2] - pos[2])
 end
