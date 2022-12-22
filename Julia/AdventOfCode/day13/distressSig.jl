@@ -19,15 +19,15 @@ function distressSig()
         while !eof(io)
             line = readline(io)
             left = parseVector(line[2:end-1])
-            vec =  vcat(vec, 1)
-            vec[size(vec,1)] = left
-            
+            vec = vcat(vec, 1)
+            vec[size(vec, 1)] = left
+
             # println("$line\n$left")
 
             line = readline(io)
             right = parseVector(line[2:end-1])
-            vec =  vcat(vec, 1)
-            vec[size(vec,1)] = right
+            vec = vcat(vec, 1)
+            vec[size(vec, 1)] = right
             # println("$line\n$right")
 
             if !eof(io)
@@ -43,19 +43,21 @@ function distressSig()
     m1 = [[2]]
     m2 = [[6]]
     vec = vcat(vec, 1)
-    vec[size(vec,1)] = m1
+    vec[size(vec, 1)] = m1
     vec = vcat(vec, 1)
-    vec[size(vec,1)] = m2
+    vec[size(vec, 1)] = m2
     vec = bubble(vec)
 
     mult = 1
-    for i = 1:size(vec,1)
-        if vec[i] == m1 || vec[i] == m2
+    i = 1
+    for el in vec
+        if el == m1 || el == m2
             mult *= i
-            if vec[i] == m2
+            if el == m2
                 break
             end
         end
+        i += 1
     end
     return sum, mult
 end
@@ -199,7 +201,7 @@ function parseVector(string::String)
     len = sizeof(string)
     unsee = false
     sdx = 0
-    count = 0 
+    count = 0
     edx = 0
     val = 0
     for i = 1:len
@@ -214,20 +216,20 @@ function parseVector(string::String)
             if count == 0
                 unsee = false
                 edx = i - 1
-                str = string[sdx + 1:edx]
+                str = string[sdx+1:edx]
                 val = parseVector(str)
                 if i == len
                     vec = vcat(vec, 1)
-                    vec[size(vec,1)] = val
+                    vec[size(vec, 1)] = val
                 end
             else
                 count -= 1
             end
         elseif !unsee && string[i] == ','
             vec = vcat(vec, 1)
-            vec[size(vec,1)] = val
+            vec[size(vec, 1)] = val
             sdx = 0
-            count = 0 
+            count = 0
             edx = 0
             val = 0
         elseif !unsee
@@ -250,8 +252,8 @@ function bubble(vec::Vector{Any})
     len = size(vec, 1)
     pass = true
     for i = 1:len
-        for j = 1:len - 1
-            if !compareAny(vec[j], vec[j + 1])
+        for j = 1:len-1
+            if !compareAny(vec[j], vec[j+1])
                 hold = vec[j]
                 vec[j] = vec[j+1]
                 vec[j+1] = hold
