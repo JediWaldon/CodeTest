@@ -1,5 +1,16 @@
 #=
-
+sandfall reads the file at the hardcoded file location and call genCoords 
+    to record each row of coordiantes. After all of them have been collected 
+    it calls genMap to construct the map form the coordinates and known 
+    boundaries. To solve part 1 it adjusts the position of the sand dropping 
+    and marks it. It then tallies up all the sand that has fallen down and 
+    come to rest before one goes into the void below. It solves part 2 using 
+    the result of part 1 and continues after adding extra padding to the map 
+    so that the sand cannot cross over the boundaries of the matrix. It also 
+    adds a floor to the map so that the sand dropping hole will be plugged 
+    eventually. It tallies how long many units of sand must fall in order to 
+    do so. It then returns how much sand has fallen.
+@return the amount of sand that has fallen.
 =#
 function sandfall()
     xstart, xend, yend = (0, 0, 0)
@@ -12,6 +23,11 @@ function sandfall()
         end
     end
     map = genMap(xstart, xend, yend, coords)
+    len, wid = size(map)
+    map = hcat(fill('.', len), map)
+    wid += 1
+
+    # Part 1
     dropPos = 500 - xstart + 2
     map[dropPos, 1] = '+'
     grains = 0
@@ -21,7 +37,18 @@ function sandfall()
         grains += 1
     end
     grains -= 1
-    printMap(map)
+
+    # Part 2
+    map = vcat(fill('.', (wid, wid)), map)
+    map = vcat(map, fill('.', (wid, wid)))
+    map = hcat(map, fill('#', (2 * wid + len, 1)))
+    dropPos += wid + 1
+    while map[dropPos, 1] != 'o'
+
+        map = dropSand(map, dropPos)[1]
+        grains += 1
+    end
+    # printMap(map)
     return grains
 end
 
