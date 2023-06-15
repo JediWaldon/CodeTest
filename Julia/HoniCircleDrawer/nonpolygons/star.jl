@@ -52,16 +52,16 @@ function drawEvenStar(p, offset=0)
             offset2 = offset * 3
             drawEvenStar(fld(p, 2), offset2)
         end
-        # drawOddStar(fld(p, 2))
 
-        # plot!(evenStar(1, fld(p, 2), 0, 0), seriestype=[:shape,], lw=1.0, linecolor=:black, fillalpha=0.15, legend=false, aspect_ratio=1)
     end
 end
 
-function pieces(p)
-    original = p
-    while p % 2 != 1 && p != 4
-        p /= 2
-    end
-    return convert(Int, original / p)
-end
+#=
+=#
+# function pieces(p)
+#     original = p
+#     while p % 2 != 1 && p != 4
+#         p /= 2
+#     end
+#     return convert(Int, original / p)
+# end
