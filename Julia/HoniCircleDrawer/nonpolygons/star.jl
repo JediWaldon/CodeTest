@@ -19,6 +19,7 @@ TODO: Recursion!
 =#
 function evenStar(r, p, offset, x, y)
     theta = LinRange(offset, 4 * pi + offset, p + 1)
+    # @show(offset * 180 / pi)
     x .+ r * sin.(theta), y .+ r * cos.(theta)
 end
 
@@ -46,9 +47,9 @@ function drawEvenStar(p, offset=0)
             drawEvenStar(fld(p, 2), offset)
 
         else
-            offset1 = offset + offset / 2
+            offset1 = offset
             drawEvenStar(fld(p, 2), offset1)
-            offset2 = offset - offset / 2
+            offset2 = offset * 3
             drawEvenStar(fld(p, 2), offset2)
         end
         # drawOddStar(fld(p, 2))
