@@ -26,7 +26,7 @@ end
 TODO: Recursion!
 =#
 function drawEvenStar(p, offset=0)
-    @show(offset * 6 / pi)
+    # @show(offset * 6 / pi)
     if p == 4
         if offset == 0
             drawPoly(4)
@@ -55,4 +55,12 @@ function drawEvenStar(p, offset=0)
 
         # plot!(evenStar(1, fld(p, 2), 0, 0), seriestype=[:shape,], lw=1.0, linecolor=:black, fillalpha=0.15, legend=false, aspect_ratio=1)
     end
+end
+
+function pieces(p)
+    original = p
+    while p % 2 != 1 && p != 4
+        p /= 2
+    end
+    return convert(Int, original / p)
 end
