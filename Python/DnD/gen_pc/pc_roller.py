@@ -43,14 +43,14 @@ def stat_mod(num: int):
     return num // 2 - 5
 
 
-"""
-check_mod_calcs prints the stat numbers and the generated modifiers for them for manual review.
-"""
+# """
+# check_mod_calcs prints the stat numbers and the generated modifiers for them for manual review.
+# """
 
 
-def check_mod_calc():
-    for i in range(1, 19):
-        print("Stat: " + str(i) + " Mod: " + str(stat_mod(i)))
+# def check_mod_calc():
+#     for i in range(1, 19):
+#         print("Stat: " + str(i) + " Mod: " + str(stat_mod(i)))
 
 
 """
@@ -91,12 +91,14 @@ def class_recs(arr: list):
     if f_hi != s_hi and f_idx != 2:
         options = get_opt(f_idx)
     else:
-        short_names = ["STR", "DEX", "CON", "INT", "WIS", "CHA"]
+        # short_names = ["STR", "DEX", "CON", "INT", "WIS", "CHA"]
         # print(short_names[f_idx] + " " + short_names[s_idx])
-        options = list(set(get_opt(f_idx)) & set(get_opt(s_idx)))
+        f = set(get_opt(f_idx))
+        s = set(get_opt(s_idx))
+        options = list(f & s)
         if len(options) == 0:
-            options = list(set(get_opt(f_idx)) | set(get_opt(s_idx)))
-    return options
+            options = list(f | s)
+    return sorted(options)
 
 
 """
@@ -199,6 +201,4 @@ def stat_descr(arr: list):
 
 # check_mod_calc()
 
-# pc_gen()
-
-# roll4drop(True, 10)
+pc_gen()
