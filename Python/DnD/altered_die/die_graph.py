@@ -9,8 +9,8 @@ die_list = [4, 6, 8, 10, 12, 20]
 def verify_graph(die_graph: dict):
     for face in range(1, len(die_graph)):
         for adj_face in die_graph[face]:
-            if die_graph[adj_face].count(adj_face) != 0:
-                print("{} {}".format(die_graph[adj_face], adj_face))
+            if die_graph[adj_face].count(face) == 0:
+                print("{} {}".format(die_graph[adj_face], face))
                 return False
     return True
 
