@@ -3,7 +3,7 @@
 This is an exploration of languages used outside the classroom.
 
 ## Languages
-| Name | Encoutered | Familiarity |
+| Name | Encountered | Familiarity |
 | ---- | ---------- | ----------- |
 | Dart | A friend let me join him on a project he has been running for a bit using Dart. | Proficient |
 | Julia | Numerical Methods and Theory of Programming Languages | Proficient | 
