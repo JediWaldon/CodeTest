@@ -1,0 +1,51 @@
+#pzl {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 0%;
+    margin: 30px;
+}
+
+.pzlbtn {
+    border-radius: 50%;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    border-width: 30px;
+    /* display: inline-block; */
+    min-width: 60px;
+    min-height: 60px;
+    padding: 20px;
+    margin: 25px;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.active {
+    border-color: rgb(255, 213, 0);
+}
+
+.active.red {
+    border-color: red;
+}
+
+.active.blue {
+    border-color: blue;
+}
+
+.active.green {
+    border-color: green;
+}
+
+/* 
+
+.square {
+    aspect-ratio: 1/ 1;
+    display: flex;
+    align-items: center;
+    padding: 5%;
+    background-color: #1E1E1E;
+    color: #fff;
+}
+*/
