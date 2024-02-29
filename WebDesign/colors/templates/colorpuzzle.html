@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="css/colorpuzzle.css" />
+    <link rel="stylesheet" type="text/css" href="css/puzzle.css" />
+    <script src="js/puzzle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
+
+    <title>D&D Color Puzzles</title>
+</head>
+
+<body>
+    <div class="descr">
+        <h1>Color Puzzles</h1>
+        <p>This site allows the user to create a color puzzle that operates on the same logic as a Link's Awakening
+            Color Dungeon puzzle.</p>
+        <div id="details">
+            <div>
+                <label>Mode:</label>
+                <select id="mode">
+                    <option>Choose</option>
+                    <option value="edit">Edit</option>
+                    <option value="solve">Solve</option>
+                </select>
+            </div>
+            <div>
+                <label>Goal Color:</label>
+                <select id="goal">
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                </select>
+            </div>
+        </div>
+
+
+    </div>
+    <div id="pzl">
+
+    </div>
+</body>
+
+</html>

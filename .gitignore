@@ -1,0 +1,8 @@
+__pycache__
+get-pip.py
+.vscode
+.pytest_cache
+.DS_*
+node_modules
+*.log
+*.gz
